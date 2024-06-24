@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import NavItem from './NavItem.vue'
-  import NavSubList from './NavSubList.vue'
+import NavItem from './NavItem.vue'
+import NavSubList from './NavSubList.vue'
 </script>
 
 <template>
@@ -10,10 +10,10 @@
       <a class="navlink" href="#">NeoTrynDev</a>
     </NavItem>
     <NavItem class="navitem">
-      <NavSubList/>
+      <NavSubList />
     </NavItem>
     <NavItem class="navitem">
-      <i class="fa-solid fa-moon"></i>
+      <i class="fa-solid fa-moon theme"></i>
     </NavItem>
   </ul>
 </template>
@@ -50,6 +50,8 @@
 
 .navlink {
   margin-left: 0.25rem;
+
+  font-size: 1.25rem;
 }
 
 .dropdown {
@@ -64,5 +66,11 @@
   .dropdown {
     transform: rotate(180deg);
   }
+}
+
+.theme {
+  font-size: 2rem;
+
+  margin-right: 0.75rem;
 }
 </style>

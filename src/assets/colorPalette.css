@@ -1,33 +1,33 @@
 :root {
-    --brandcolorshadelight: #d0c2f8;
-    --brandcolorshadelightmid: #7d68ee;
-    --brandcolor: #4f13d9;
-    --brandcolorshadedarkmid: #2c047e;
-    --brandcolorshadedark: #0e0130;
+  --brandcolorshadelight: #d0c2f8;
+  --brandcolorshadelightmid: #7d68ee;
+  --brandcolor: #4f13d9;
+  --brandcolorshadedarkmid: #2c047e;
+  --brandcolorshadedark: #0e0130;
 
-    --supportingcolorredshadelight: #f8b8b8;
-    --supportingcolorredshadelightmid: #d73c3c;
-    --supportingcolorred: #c71313;
-    --supportingcolorredshadedarkmid: #880606;
-    --supportingcolorredshadedark: #300101;
+  --supportingcolorredshadelight: #f8b8b8;
+  --supportingcolorredshadelightmid: #d73c3c;
+  --supportingcolorred: #c71313;
+  --supportingcolorredshadedarkmid: #880606;
+  --supportingcolorredshadedark: #300101;
 
-    --supportingcolorgreenshadelight: #b2fab2;
-    --supportingcolorgreenshadelightmid: #53e153;
-    --supportingcolorgreen: #1ac91a;
-    --supportingcolorgreenshadedarkmid: #088c08;
-    --supportingcolorgreenshadedark: #013001;
+  --supportingcolorgreenshadelight: #b2fab2;
+  --supportingcolorgreenshadelightmid: #53e153;
+  --supportingcolorgreen: #1ac91a;
+  --supportingcolorgreenshadedarkmid: #088c08;
+  --supportingcolorgreenshadedark: #013001;
 
-    --supportingcolorblueshadelight: #aecbfa;
-    --supportingcolorblueshadelightmid: #7daaff;
-    --supportingcolorblue: #3190fd;
-    --supportingcolorblueshadedarkmid: #084ca1;
-    --supportingcolorblueshadedark: #032959;
+  --supportingcolorblueshadelight: #aecbfa;
+  --supportingcolorblueshadelightmid: #7daaff;
+  --supportingcolorblue: #3190fd;
+  --supportingcolorblueshadedarkmid: #084ca1;
+  --supportingcolorblueshadedark: #032959;
 
-    --supportingcoloryellowshadelight: #f5dcab;
-    --supportingcoloryellowshadelightmid: #e3b453;
-    --supportingcoloryellow: #d29f1b;
-    --supportingcoloryellowshadedarkmid: #886508;
-    --supportingcoloryellowshadedark: #302501;
+  --supportingcoloryellowshadelight: #f5dcab;
+  --supportingcoloryellowshadelightmid: #e3b453;
+  --supportingcoloryellow: #d29f1b;
+  --supportingcoloryellowshadedarkmid: #886508;
+  --supportingcoloryellowshadedark: #302501;
 
-    --white: #f8f9fa;
+  --white: #f8f9fa;
 }
