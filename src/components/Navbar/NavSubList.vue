@@ -6,7 +6,7 @@ import NavItem from './NavItem.vue'
   <ul class="navsublist">
     <NavItem class="navsubitem">
       <i class="fa-solid fa-house navicon"></i>
-      <a class="navsublink" href="#">Home</a>
+      <RouterLink class="navsublink" to="/">Home</RouterLink>
     </NavItem>
     <NavItem class="navsubitem">
       <i class="fa-solid fa-address-card navicon"></i>
@@ -41,7 +41,9 @@ import NavItem from './NavItem.vue'
   border-radius: 2rem;
   padding: 1.25rem 2rem 1.25rem 2rem;
 
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 
   font-size: 1.1rem;
 }
@@ -53,7 +55,8 @@ import NavItem from './NavItem.vue'
 .navsubitem:hover {
   background-color: var(--brandcolor);
 
-  .navsublink, .navicon {
+  .navsublink,
+  .navicon {
     color: var(--white);
   }
 }

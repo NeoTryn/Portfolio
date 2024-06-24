@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import Navbar from './components/Navbar/NavBar.vue'
+import NavBar from '@/components/Navbar/NavBar.vue'
 </script>
 
 <template>
-  <Navbar />
-  <div class="container">
-    <RouterView />
-  </div>
+  <NavBar id="navbar"></NavBar>
+  <RouterView />
 </template>
 
-<style scoped></style>
+<style scoped>
+#navbar {
+  z-index: 10;
+}
+</style>
