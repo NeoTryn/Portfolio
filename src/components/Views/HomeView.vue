@@ -1,9 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import FooterHome from '@/components/Footer/FooterHome.vue'
+</script>
 
 <template>
   <div class="container">
     <RouterLink id="link" to="/game">Explore my skills!</RouterLink>
   </div>
+  <FooterHome></FooterHome>
 </template>
 
 <style scoped>
