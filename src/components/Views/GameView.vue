@@ -4,12 +4,15 @@ import {
   BoxGeometry, Group,
   Mesh,
   MeshPhongMaterial, type Object3DEventMap,
-  PerspectiveCamera, PointLight,
-  Scene,
+  PointLight,
   WebGLRenderer
 } from 'three'
+
 import { onMounted, ref } from 'vue'
 import { GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js'
+
+import { scene } from '@/game/scene'
+import { camera } from '@/game/camera'
 
 let posX = 0;
 let posY = 0;
@@ -17,16 +20,13 @@ let posZ = 0;
 
 const canvas = ref<HTMLCanvasElement | null>(null)
 
-const scene = new Scene()
-const camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+camera.lookAt(scene.position);
 
-scene.add(camera)
-
-camera.position.z = 5
+console.log(scene.position);
 
 const loader = new GLTFLoader();
 
-const light = new PointLight(0xffffff, 100, 100);
+const light = new PointLight(0xffffff, 1000, 0);
 scene.add(light)
 
 onMounted(() => {
@@ -86,7 +86,18 @@ onMounted(() => {
 })
 
 function keyboardControls(e : any) {
-  posX += 0.1;
+  if (e.key == "a") {
+    posX -= 0.05;
+  }
+  else if (e.key == "d") {
+    posX += 0.05;
+  }
+  else if (e.key == "w") {
+    posZ -= 0.05;
+  }
+  else if (e.key == "s") {
+    posZ += 0.05;
+  }
 }
 </script>
 
