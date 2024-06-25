@@ -1,15 +1,19 @@
 <script setup lang="ts">
 import {
   AmbientLight,
-  BoxGeometry,
+  BoxGeometry, Group,
   Mesh,
-  MeshBasicMaterial, MeshLambertMaterial, MeshPhongMaterial,
+  MeshPhongMaterial, type Object3DEventMap,
   PerspectiveCamera, PointLight,
   Scene,
   WebGLRenderer
 } from 'three'
 import { onMounted, ref } from 'vue'
 import { GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js'
+
+let posX = 0;
+let posY = 0;
+let posZ = 0;
 
 const canvas = ref<HTMLCanvasElement | null>(null)
 
@@ -22,7 +26,7 @@ camera.position.z = 5
 
 const loader = new GLTFLoader();
 
-const light = new PointLight(0xff0000, 100, 100);
+const light = new PointLight(0xffffff, 100, 100);
 scene.add(light)
 
 onMounted(() => {
@@ -39,46 +43,78 @@ onMounted(() => {
   })
   const cube = new Mesh(geometry, material)
 
-  const light = new AmbientLight(0xffffff, 100);
-  scene.add(light)
-
-  scene.add(cube)
+  const light2 = new AmbientLight(0xffffff, 100);
+  scene.add(light2)
 
   cube.rotation.z = Math.PI / 4
+
+  let model : Group<Object3DEventMap>;
 
   loader.load(
     '/models/monkey.glb',
     gltf => {
+      gltf.scene.position.z = -1;
+      gltf.scene.position.x = 5;
       scene.add(gltf.scene)
-      console.log("added");
+
+      console.log("loaded");
+      model = gltf.scene;
     },
     undefined,
-    undefined
+    error => {
+      console.error(error)
+    }
   )
 
-  renderer.render(scene, camera);
+  renderer.setAnimationLoop( render )
 
   function render() {
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-
+    update();
     renderer.render(scene, camera);
   }
+
+  function update() {
+    if (model != undefined) {
+      model.position.x = posX;
+      model.position.y = posY;
+      model.position.z = posZ;
+    }
+    else {
+      console.error("undefined");
+    }
+  }
 })
+
+function keyboardControls(e : any) {
+  console.log(e.key);
+  console.log("smth");
+}
 </script>
 
 <template>
-  <canvas ref="canvas"></canvas>
+  <div class="container" @keydown="keyboardControls($event)">
+  <canvas ref="canvas" ></canvas>
+  </div>
 </template>
 
 <style scoped>
 canvas {
-  top: 10%;
+  top: 0;
   left: 0;
 
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
 
   position: fixed;
+}
+
+.container {
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
 }
 </style>

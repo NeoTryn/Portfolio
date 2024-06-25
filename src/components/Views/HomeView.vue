@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import FooterHome from '@/components/Footer/FooterHome.vue'
+import NavBar from '@/components/Navbar/NavBar.vue'
 </script>
 
 <template>
+  <NavBar id="navbar"></NavBar>
   <div class="container">
     <RouterLink id="link" to="/game">Explore my skills!</RouterLink>
   </div>
