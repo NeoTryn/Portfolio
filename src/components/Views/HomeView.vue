@@ -4,7 +4,6 @@ import NavBar from '@/components/Navbar/NavBar.vue'
 </script>
 
 <template>
-  <NavBar id="navbar"></NavBar>
   <div class="container">
     <RouterLink id="link" to="/game">Explore my skills!</RouterLink>
   </div>

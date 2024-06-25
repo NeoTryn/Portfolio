@@ -86,13 +86,12 @@ onMounted(() => {
 })
 
 function keyboardControls(e : any) {
-  console.log(e.key);
-  console.log("smth");
+  posX += 0.1;
 }
 </script>
 
 <template>
-  <div class="container" @keydown="keyboardControls($event)">
+  <div class="container" tabindex="0" @keydown="keyboardControls($event)">
   <canvas ref="canvas" ></canvas>
   </div>
 </template>
