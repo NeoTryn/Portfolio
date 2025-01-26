@@ -1,0 +1,13 @@
+:root {
+    --neon-cyan:#4deeea;
+    --neon-green:#74ee15;
+    --neon-yellow:#ffe700;
+    --neon-pink:#b800eb;
+    --neon-blue:#001eff;
+
+    --neon-cyan-less-opaque:#4deeebbe;
+    --neon-green-less-opaque:#73ee15bc;
+    --neon-yellow-less-opaque:#ffe600c1;
+    --neon-pink-less-opaque:#b800ebba;
+    --neon-blue-less-opaque:#001effb8;
+}
