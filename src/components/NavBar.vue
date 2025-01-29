@@ -17,6 +17,22 @@ import { RouterLink } from 'vue-router';
 
 <style lang="css" scoped>
 
+    #nav-list {
+        list-style-type: none;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-direction: row;
+
+        gap: 3rem;
+
+        padding-left: 0;
+
+        transform: translateX(-3rem);
+    }
+
     #nav-bar {
         padding: 1rem 3rem;
 
@@ -34,19 +50,9 @@ import { RouterLink } from 'vue-router';
         justify-content: center;
         align-items: center;
 
-        z-index: 1000;
-    }
-
-    #nav-list {
-        list-style-type: none;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
         flex-direction: row;
 
-        gap: 3rem;
+        z-index: 1000;
     }
 
     .router-link {
