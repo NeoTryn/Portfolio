@@ -9,7 +9,7 @@ import { RouterLink } from 'vue-router';
             <RouterLink to="/" class="router-link">Home</RouterLink>
         </li>
         <li>
-            <RouterLink to="/about" class="router-link">About Me</RouterLink>
+            <RouterLink to="/about" class="router-link">About</RouterLink>
         </li>
     </ul>
 </nav>
@@ -21,7 +21,20 @@ import { RouterLink } from 'vue-router';
         padding: 1rem 3rem;
 
         background: linear-gradient(to bottom right, #101010, #050505);
-        box-shadow: 0 0 2rem #070707; 
+        box-shadow: 0 0 2rem #070707;
+
+        top: 0;
+        left: 0;
+
+        position: fixed;
+
+        width: 100vw;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        z-index: 1000;
     }
 
     #nav-list {
@@ -39,7 +52,7 @@ import { RouterLink } from 'vue-router';
     .router-link {
         text-decoration: none;
         color: whitesmoke;
-        font-family: 'Ubuntu Sans Mono', serif;
+        font-family: 'Orbitron', serif;
         
         transition: opacity 0.3s;
 
