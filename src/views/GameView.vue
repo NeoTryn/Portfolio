@@ -3,17 +3,16 @@
 </script>
 
 <template>
-  <main>
-    <h1 class="heading">Hi, my name is Felix</h1>
-  </main>
+    <main>
+        <h1 class="heading">Game and shii</h1>
+    </main>
 </template>
 
 <style lang="css" scoped>
-  main {
+main {
     display: flex;
     justify-content: center;
     align-items: center;
-
     height: 100vh;
-  }
+}
 </style>

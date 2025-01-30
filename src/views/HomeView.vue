@@ -58,7 +58,7 @@
   #dexter {
     animation: slide-up-mod linear;
     animation-timeline: view();
-    animation-range: entry 0% cover 50%;
+    animation-range: entry 0% cover 40%;
 
     width: 30rem;
     height: 30rem;
@@ -70,14 +70,6 @@
 
   .heading {
     margin-top: 22.5rem;
-
-    font-size: 3rem;
-
-    transition: text-shadow 0.2s ease-out;
-  }
-
-  .heading:hover {
-    text-shadow: 0 0 5rem var(--neon-pink), 0 0 1rem var(--neon-cyan), 0 0 0.2rem whitesmoke;
   }
 
   #about-me-general {
@@ -131,13 +123,13 @@
   h1 {
     animation: slide-up linear;
     animation-timeline: view();
-    animation-range: entry 0% cover 50%;  
+    animation-range: entry 0% cover 30%;  
   }
 
   h3 {
     animation: slide-up linear;
     animation-timeline: view();
-    animation-range: entry 0% cover 50%;  
+    animation-range: entry 0% cover 40%;  
   }
 
   @keyframes slide-up {
