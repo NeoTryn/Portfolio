@@ -1,5 +1,64 @@
 <script lang="ts" setup>
-  import AboutMeBox from '@/components/AboutMeBox.vue';
+import AboutMeBox from '@/components/AboutMeBox.vue';
+
+import { onMounted, onUnmounted } from 'vue';
+import * as THREE from 'three';
+
+let scene: THREE.Scene;
+let camera: THREE.PerspectiveCamera;
+let renderer: THREE.WebGLRenderer;
+let torus: THREE.Mesh;
+
+const init = () => {
+  // Create scene
+  scene = new THREE.Scene();
+
+  // Create camera
+  camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.setZ(30);
+
+  // Create renderer
+  renderer = new THREE.WebGLRenderer({
+    canvas: document.querySelector('#bg') as HTMLCanvasElement,
+  });
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  // Create geometry and material
+  const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
+  const material = new THREE.MeshStandardMaterial({ color: 0xFF6347});
+
+  // Create mesh
+  torus = new THREE.Mesh(geometry, material);
+  scene.add(torus);
+
+  const pointLight = new THREE.PointLight(0xffffff);
+  pointLight.position.set(5, 0, 0);
+
+  scene.add(pointLight);
+
+  // Start animation
+  animate();
+};
+
+const animate = () => {
+  requestAnimationFrame(animate);
+
+  // Rotate torus
+  torus.rotation.x += 0.01;
+  torus.rotation.y += 0.01;
+
+  renderer.render(scene, camera);
+};
+
+onMounted(() => {
+  init();
+});
+
+onUnmounted(() => {
+  // Clean up resources
+  renderer.dispose();
+});
 </script>
 
 <template>
@@ -40,6 +99,7 @@
       </AboutMeBox>
     </div>
   </main>
+  <canvas id="bg"></canvas>
 </template>
 
 <style lang="css" scoped>
@@ -53,6 +113,16 @@
 
   main:last-child {
     margin-bottom: 25rem;
+  }
+
+  #bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+
+    background-color: rgb(10, 10, 10);
   }
 
   #dexter {
@@ -114,6 +184,7 @@
 
   .my-projects-div {
     margin-right: auto;
+    margin-bottom: 15rem;
   }
 
   .my-projects:hover {
